@@ -1,9 +1,5 @@
 <template>
-  <Tutorial/>
+  <div>
+    <TagInput />
+  </div>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage'
-}
-</script>
