@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="mx-auto w-1/2 mt-2 relative">
+      <p class="text-gray-500 mb-4">
+        Insert text here. Type '#' and a letter to get suggestions.
+      </p>
       <div
         id="fake-input"
         class="w-full h-24 p-2 mb-4 border border-gray-300"
@@ -26,7 +29,7 @@
 
     <!-- Remove this and the following div to remove the debug section -->
     <div class="debug mt-64">
-      <h1>Debug</h1>
+      <h1 class="text-xl">Debug</h1>
       <pre>text: {{ text }}</pre>
       <pre>existingTags: {{ existingTags }}</pre>
       <pre>tagSuggestions: {{ tagSuggestions }}</pre>
