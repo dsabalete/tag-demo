@@ -20,12 +20,21 @@
     </div>
 
     <!-- Remove this and the following div to remove the debug section -->
-    <div class="debug mt-4">
-      <h1 class="text-xl">Debug</h1>
-      <pre>text: {{ text }}</pre>
-      <pre>existingTags: {{ existingTags }}</pre>
-      <pre>tagSuggestions: {{ tagSuggestions }}</pre>
-    </div>
+    <section class="debug mt-24">
+      <h1 class="text-xl">
+        State of the component
+        <span class="text-sm">(only for debugging purposes)</span>
+      </h1>
+      <p class="p-4 bg-yellow-50">text: {{ text }}</p>
+      <div class="debug-container flex flew-row">
+        <div class="p-4 bg-green-50 w-1/2">
+          <pre>existingTags: {{ existingTags }}</pre>
+        </div>
+        <div class="p-4 bg-blue-50 w-1/2">
+          <pre>tagSuggestions: {{ tagSuggestions }}</pre>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
