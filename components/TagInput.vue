@@ -1,19 +1,11 @@
 <template>
   <div>
-    <div class="mx-auto w-1/2 mt-2 relative">
+    <div class="tag-input-container">
       <p class="text-gray-500 mb-4">
         Insert text here. Type '#' and a letter to get suggestions.
       </p>
-      <div
-        id="fake-input"
-        class="w-full h-24 p-2 mb-4 border border-gray-300"
-        contenteditable="true"
-        @input="handleInput"
-      ></div>
-      <div
-        class="absolute w-1/2 max-h-40 bg-gray-100 border border-gray-500 p-1 overflow-y-auto"
-        v-if="showDropdown"
-      >
+      <div id="fake-input" contenteditable="true" @input="handleInput"></div>
+      <div class="tag-input-dropdown" v-if="showDropdown">
         <ul class="list-none p-0 m-0">
           <li
             class="p-1 cursor-pointer hover:bg-gray-300"
@@ -28,7 +20,7 @@
     </div>
 
     <!-- Remove this and the following div to remove the debug section -->
-    <div class="debug mt-64">
+    <div class="debug mt-4">
       <h1 class="text-xl">Debug</h1>
       <pre>text: {{ text }}</pre>
       <pre>existingTags: {{ existingTags }}</pre>
@@ -113,3 +105,22 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.tag-input-container {
+  @apply mx-auto w-1/2 mt-2 relative;
+}
+
+#fake-input {
+  @apply w-full p-2 mb-4 border border-gray-300;
+  min-height: 10rem;
+}
+
+.tag-input-dropdown {
+  @apply absolute w-1/2 max-h-40 bg-gray-100 border border-gray-500 p-1 overflow-y-auto;
+}
+
+.debug {
+  @apply mx-16;
+}
+</style>
